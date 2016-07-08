@@ -7,7 +7,10 @@ This is the relevant paper to cite in reference to this code.
 ______________________________________________________
 OVERVIEW:
 
-I've done my best to put everything together into a reasonably neat package. All code is currently configured to run on the 'Yahoo_Arts_Split01' evaluation dataset. The code is pre-configured to Train and Test using the Dependency-LDA model, with the same parameter settings used for the the dataset in our paper, but with fewer training/testing samples. 
+All code is currently configured to run on the 'Yahoo_Health_Split01' evaluation dataset included in the package. For training, the code is currently configured to Train the following:
+	- word->label distributions (\phi) used for all models (Dependency-LDA, Prior-LDA and Flat-LDA)
+	- label->topic distributions (\phi') for use with the Dependency-LDA model. Parameters for the label->topic distributions will need to be changed to train the Prior-LDA model.
+For testing, the code is currently configured to run both the Dependency-LDA and Prior-LDA model. Changing a couple of the Prior-LDA parameters will allow testing of the Flat-LDA model.
 
 The code should run out-of-the-box if you are on a Macintosh. If you are not on a mac, you will need to re-compile all of the mex code and put the samplers in the corresponding directories.
 
@@ -34,7 +37,7 @@ TRAINING:
 		Samples z' for training documents.  Used to train \Phi', which gives: p(c|t).
 		Note that this cannot be averaged over, since topics are not going to be aligned across chains. Instead, separate test-chains are run for each set of topics computed during training (and the test-chains can then be averaged over)
 		- For Dependency-LDA, any setting of NTOPICS>1 can be used (see paper for our recommended settings), and we sample multiple chains
-		- For Prior-LDA, train a single chain with NTOPICS=1;  Prior-LDA is a special case of Dependency-LDA, in which there is a single Topic->Label distribution, where that topic's distribution over labels is proportional to each label's training frequency.
+		- For Prior-LDA and Flat-LDA, train a single chain with NTOPICS=1;  Prior-LDA is a special case of Dependency-LDA, in which there is a single Topic->Label distribution, where that topic's distribution over labels is proportional to each label's training frequency. Flat-LDA is a special case of Prior-LDA, in which no weight is put on the \eta parameter when computing each document's \alpha prior distribution over labels.
 
 TESTING (Dependency-LDA):
 
@@ -45,6 +48,12 @@ TESTING (Prior-LDA):
 
 3)  Run the "PriorLDA_Sample_TestDocuments.m" script in "Test_PriorLDA_TestDocuments".  
 		Prior-LDA uses a single training chain of \Phi', in which NTOPICS = 1
+
+
+TESTING (Flat-LDA):
+
+3)  Run the "PriorLDA_Sample_TestDocuments.m" script in "Test_PriorLDA_TestDocuments".  
+		Prior-LDA uses a single training chain of \Phi', in which NTOPICS = 1 and \eta = 1 (the \eta parameter from the paper is named "SUMALPHA_LABELS" in the code)
 
 FINAL PREDICTIONS & EVALUATIONS:
 
@@ -68,7 +77,7 @@ NOTE ON PRIOR-LDA & FLAT-LDA
  - Flat-LDA can be treated as a special case of this Prior-LDA model, where the vector \alpha' is computed by putting no weight on the output from the topic->label part of the model. This can be achieved using the Prior-LDA code, by setting the \eta parameter ("SUMALPHA_LABELS" in the code) to ZERO. Therefore only the \alpha ("ADDALPHA_LABELS" in the code) is used in computing \alpha' for each document, which gives a flat prior over labels. For example, as described in the paper, for the Yahoo Datasets we used SUMALPHA_LABELS=0 and ADDALPHA_LABELS=100. 
 
 _________________________________________________
-RESULTS EXAMPLES FOR ALL MODELS (DEPENDENCY-LDA, PRIOR-LDA, LABELED-LDA)
+RESULTS EXAMPLES FOR ALL MODELS (DEPENDENCY-LDA, PRIOR-LDA, FLAT-LDA)
 
 - Examples of completed results and test-document statistics for all three models on the "Yahoo_Health_Split01" dataset are provided in the subdirectories of the Yahoo_Health_Split01 dataset. You can use these as a guide for using the provided code to run all three models.
 - The .mat files containing all evaluation statistics for both doc-pivoted and label-pivoted predictions for the three models are here:

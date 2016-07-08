@@ -1,4 +1,5 @@
 %% USING THE AVERAGED PREDICTIONS FILE AND THE TRUE TEST-LABELS, COMPUTE ALL DOC-PIVOTED AND LABEL-PIVOTED STATISTICS 
+clear;clc;close all;
 
 %% Set up datasetlabel
 files.datasetlabel = 'Yahoo_Health_Split01';
@@ -29,7 +30,7 @@ NSAMPLES_TESTCHAIN = 150;
 % ---- Label-Word Training parameters ----
 trainparams.PWC.ALPHA         = 50; 
 trainparams.PWC.BETA          = .01;
-trainparams.PWC.NCHAINS       = 4;
+trainparams.PWC.NCHAINS       = 5;
 
 % ---- Topic-Label Training parameters ----
 trainparams.PCT.ALPHA       = .01 ; 
