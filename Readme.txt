@@ -93,7 +93,7 @@ Flat-LDA:
 _________________________________________________
 MODIFYING CODE PARAMETERS / CHANGING DATASETS
 
-All code is currently configured to run the Yahoo_Arts_Split1 dataset, using parameters described in the paper (except taking fewer samples). To run with a different dataset, the following changes will need to be made in each of the scripts:
+All code is currently configured to run the Yahoo_Health_Split1 dataset, using parameters described in the paper (except taking fewer samples). To run with a different dataset, the following changes will need to be made in each of the scripts:
 
 Changing dataset-label:
 	- Change the "files.datasetlabel" to the corresponding evaluation dataset
