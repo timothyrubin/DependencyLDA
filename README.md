@@ -88,8 +88,10 @@ The steps required to train the model, and then make predictions using Dependenc
 
 ### Final Predictions, and evaluation of predictions (all models):
 
-Compute final predictions for test-documents and then compute statistics:
- * Code for computing averaged predictions across all test-chains for all test-documents, and then evaluating these predictions are in the subdirectories:
+Here we describe how to (1) Compute final predictions for test-documents and (2) compute evaluation statistics for these predictions
+
+Code for (1) computing averaged predictions across all test-chains for all test-documents, and (2) evaluating these predictions are in the subdirectories:
+
  * **Dependency-LDA**: "/Test_DependencyLDA_TestDocuments/Compute_TotalDP_Predictions_New_V05"
  * **Prior-LDA**:		"/Test_PriorLDA_TestDocuments/Compute_TotalDP_Predictions_New_V05"
  
@@ -97,7 +99,7 @@ Compute final predictions for test-documents and then compute statistics:
 	
  1. Run the following script to average predictions on test-documents, across chains: 
 
- 	TestDocs_Compute_TotalDP_TotalPriors_AllChains_Samples_New_V05.m
+ 		TestDocs_Compute_TotalDP_TotalPriors_AllChains_Samples_New_V05.m
 
  2. Run the following script to Compute all evaluation statistics for test-document predictions: 
  
