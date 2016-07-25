@@ -94,10 +94,12 @@ The steps required to train the model, and then make predictions using Dependenc
  * **Prior-LDA**:		"/Test_PriorLDA_TestDocuments/Compute_TotalDP_Predictions_New_V05"
  * The functions to run within each of these subdirectories are:
 	
- Function to average predictions on test-documents, across chains: 
+ Run the following script to average predictions on test-documents, across chains: 
+
  		TestDocs_Compute_TotalDP_TotalPriors_AllChains_Samples_New_V05.m
 
- Function to Compute all evaluation statistics for test-document predictions: 
+ Run the following script to Compute all evaluation statistics for test-document predictions: 
+ 
  		Compute_AllStats_Predictions.m
 
 The file containing all computed statistics for both document-pivoted and label-pivoted predictions will be saved in the appropriate subdirectory of the evaluation dataset.
