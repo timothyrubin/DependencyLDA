@@ -26,7 +26,11 @@ The code should run out-of-the-box if you are on a Macintosh. If you are not on 
 
 ##### Compiling the Mex files from C
 
-All matlab scripts call compiled c code (which matlab compiles into mex files) when sampling the z/z' indicators ). I have included code that was compiled on a Mac in the appropriate directories. If you are on a mac, these should work as is. If they don't, or you are not on a mac, you should recompile all of the code in the "/Mex_Samplers" directory. Running the script "compileCode64bit.m" within this directory should work.
+All matlab scripts call compiled c code (which matlab compiles into .mex files) when sampling the z/z' indicators ). I have included code that was compiled on a Mac in the appropriate directories. If you are on a mac, the .mex files should work as is. 
+
+If the you are not on a mac or the code doesn't work for you, you should recompile all of the c code in the "/Mex_Samplers" directory by running the following script within that directory: 
+
+		compileCode64bit.m
 
 Note that matlab sometimes gives an error (depending on your computer's) when compiling "GibbsSamplerLDA_v2.c". The issue that this causes has been addressed in the script that uses this code ("Train_pCT_New_V01.m"), so this should not cause any problems.
 
@@ -92,6 +96,7 @@ The steps required to train the model, and then make predictions using Dependenc
 	
  Function to average predictions on test-documents, across chains: 
  		TestDocs_Compute_TotalDP_TotalPriors_AllChains_Samples_New_V05.m
+
  Function to Compute all evaluation statistics for test-document predictions: 
  		Compute_AllStats_Predictions.m
 
