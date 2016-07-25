@@ -95,11 +95,11 @@ Compute final predictions for test-documents and then compute statistics:
  
  Within each of the above subdirectories, do the following two steps:
 	
- Run the following script to average predictions on test-documents, across chains: 
+ 1. Run the following script to average predictions on test-documents, across chains: 
 
- 		TestDocs_Compute_TotalDP_TotalPriors_AllChains_Samples_New_V05.m
+ 	TestDocs_Compute_TotalDP_TotalPriors_AllChains_Samples_New_V05.m
 
- Run the following script to Compute all evaluation statistics for test-document predictions: 
+ 2. Run the following script to Compute all evaluation statistics for test-document predictions: 
  
  		Compute_AllStats_Predictions.m
 
