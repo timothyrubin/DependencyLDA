@@ -55,7 +55,7 @@ _________________________________________________
 
 The steps required to train the model, and then make predictions using Dependency-LDA are as follows:
 
-#### Training:
+**Training:**
 
 1. Train the label->word distributions:
  * Run "ldatagmodel_TrainPWC_V01.m" in the "/Train_pWC_LabelWord_Probs" directory. This samples z for training documents and is used to train \Phi, which gives: p(w|c).
@@ -69,24 +69,24 @@ The steps required to train the model, and then make predictions using Dependenc
 - For Dependency-LDA, any setting of NTOPICS>1 can be used (see paper for our recommended settings), and we sample multiple chains
 - For Prior-LDA and Flat-LDA, train a single chain with NTOPICS=1;  Prior-LDA is a special case of Dependency-LDA, in which there is a single Topic->Label distribution, where that topic's distribution over labels is proportional to each label's training frequency. Flat-LDA is a special case of Prior-LDA, in which no weight is put on the \eta parameter when computing each document's \alpha prior distribution over labels.
 
-#### Testing (Dependency-LDA):
+** Testing (Dependency-LDA):**
 
 - Run the "DependencyLDA_Sample_TestDocuments.m" script in "/Test_DependencyLDA_TestDocuments".
  * For each training chain of \Phi', this will run test-chain(s) that sample z and z' for test documents, based on the averaged \Phi. The predictions for test-chains will later be averaged over.
 
-#### Testing (Prior-LDA):
+** Testing (Prior-LDA):**
 
 - Run the "PriorLDA_Sample_TestDocuments.m" script in "Test_PriorLDA_TestDocuments".  
  * Prior-LDA uses a single training chain of \Phi', in which NTOPICS = 1
 
-#### Testing (Flat-LDA):
+** Testing (Flat-LDA):**
 
 - Run the "PriorLDA_Sample_TestDocuments.m" script in "Test_PriorLDA_TestDocuments".  
  * Since Flat-LDA is a special case of Prior-LDA, we can use the same code to make predictions with Flat-LDA, and only need to modify a couple of parameters.
  * Flat-LDA uses a single training chain of \Phi', in which NTOPICS = 1 and \eta = 1 (the \eta parameter from the paper is named "SUMALPHA_LABELS" in the code)
  * For additional details see "Note on Prior-LDA and Flat-LDA" further down in this document
 
-#### Final Predictions, and evaluation of predictions (all models):
+### Final Predictions, and evaluation of predictions (all models):
 
 1. Compute final predictions for test-documents and then compute statistics 
  * Code for computing averaged predictions across all test-chains for all test-documents, and then evaluating these predictions are in the subdirectories:
