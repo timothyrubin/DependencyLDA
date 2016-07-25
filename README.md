@@ -58,12 +58,12 @@ The steps required to train the model, and then make predictions using Dependenc
 #### Training:
 
 1. Train the label->word distributions:
- * Run the "ldatagmodel_TrainPWC_V01.m" script in "Train_pWC_LabelWord_Probs": Samples z for training documents. Used to train \Phi, which gives: p(w|c).
- * Run "Compute_GetAvgPWC_New_V01" to infer \Phi for multiple training chains
- * Run "Compute_GetAvgPWC" to compute an average \Phi over all training chains
+ * Run "ldatagmodel_TrainPWC_V01.m" in the "/Train_pWC_LabelWord_Probs" directory. This samples z for training documents and is used to train \Phi, which gives: p(w|c).
+ * Run "Compute_GetAvgPWC_New_V01.m" to infer \Phi for multiple training chains
+ * Run "Compute_GetAvgPWC.m" to compute an average \Phi over all training chains
 			
 2. Train the topic->label distributions
- *  Run the "Train_pCT_New_V01.m" script in "Train_pCT_TopicLabel_Probs".  Samples z' for training documents.  Used to train \Phi', which gives: p(c|t).
+ *  Run "Train_pCT_New_V01.m" in the "/Train_pCT_TopicLabel_Probs" directory. This samples z' for training documents and is used to train \Phi', which gives: p(c|t).
   
 ** Note **  The topic->label distributions cannot be averaged over, since topics are not going to be aligned across chains. Instead, separate test-chains are run for each set of topics computed during training (and the test-chains can then be averaged over)
 - For Dependency-LDA, any setting of NTOPICS>1 can be used (see paper for our recommended settings), and we sample multiple chains
