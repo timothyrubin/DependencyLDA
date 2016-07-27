@@ -171,12 +171,12 @@ Please follow the variable-naming conventions used in these datasets if you want
 
 **Additionally, each dataset should contain the following two variables:**
 
-* 'wlabels': a cell-array of the strings corresponding to token-indices
+* 'wlabels': a fcell-array of the strings corresponding to token-indices
 * 'clabels': a cell-array of the strings corresponding to label-indices
 
 These are used for printing out "topics" for visual inspection (e.g. using the "WriteTopicsToCSV" function).
 
-If your dataset does not have strings for the "wlabels" or "clabels", you can just use insert generic strings (e.g., "word1", "word2" and "label1" "label2"). I have done this for the Yahoo datasets, which were sent to us without any label/word strings.
+If your dataset does not have strings for the "wlabels" or "clabels", you can just use generic strings (e.g., "word1", "word2" and "label1" "label2"). I have done this for the Yahoo datasets, which were sent to us without any label/word strings.
 
 ________________________________________________________
 ### ADDITIONAL COMMENTS:
@@ -184,8 +184,8 @@ ________________________________________________________
 For Dependency-LDA, the code is not fully optimized (and can sometimes be slow for large datasets). Specifically, while the compiled code is fast (for sampling the z and z' variables) it repeatedly passes variables back and forth between matlab and the compiled code. 
 
 If you would like to make the code run faster, you can try modifying the sampling parameters that control how often the data is passed between matlab and the compiled code:
-- ITERS_LABELS
-- ITERS_TOPICS 
+- 'ITERS_LABELS'
+- 'ITERS_TOPICS'
 
 which control how many full iterations to run on z and z' before the updated values are passed back to matlab). Alternatively (ideally), all of the code would be compiled, but we do not have an implementation of that.
 
