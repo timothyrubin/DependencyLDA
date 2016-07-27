@@ -155,20 +155,20 @@ All datasets in the directory "/Evaluation_Datasets" are formatted so that they 
 
 Please follow the variable-naming conventions used in these datasets if you want to run the code on additional datasets that are not included. Here is a summary of how the datasets are configured:
 
-##### Each dataset contains two structure variables:
+**Each dataset contains the following two structure variables:**
 
 - "traindata" contained indices for training documents.
 - "testdata" contained indices for test-documents.
 
 
-##### Within the structure variables (e.g., "traindata") we would have the following fields:
+**Within the structure variables (e.g., "traindata") we have the following fields:**
 
-word-tokens:
-	widx = vector of word-token indices
-	wdidx = vector of word-document indices
-label-tokens:
-	cidx = vector of label-token indices
-	cdidx = vector of label-document indices
+1. word-tokens:
+ * widx = vector of word-token indices
+ * wdidx = vector of word-document indices
+2. label-tokens:
+ * cidx = vector of label-token indices
+ * cdidx = vector of label-document indices
 
 ##### Additionally, each dataset should contain the following two variables:
 
