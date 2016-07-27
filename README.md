@@ -157,23 +157,22 @@ Please follow the variable-naming conventions used in these datasets if you want
 
 **Each dataset contains the following two structure variables:**
 
-- "traindata" contained indices for training documents.
-- "testdata" contained indices for test-documents.
-
+- 'traindata': contains indices for training documents.
+- 'testdata': contains indices for test-documents.
 
 **Within the structure variables (e.g., "traindata") we have the following fields:**
 
 1. word-tokens:
- * widx = vector of word-token indices
- * wdidx = vector of word-document indices
+ * 'widx': a vector of word-token indices
+ * 'wdidx': a vector of word-document indices
 2. label-tokens:
- * cidx = vector of label-token indices
- * cdidx = vector of label-document indices
+ * 'cidx': a vector of label-token indices
+ * 'cdidx': a vector of label-document indices
 
-##### Additionally, each dataset should contain the following two variables:
+**Additionally, each dataset should contain the following two variables:**
 
-wlabels = cell-array of the strings corresponding to token-indices
-clabels = cell-array of the strings corresponding to label-indices
+* 'wlabels': a cell-array of the strings corresponding to token-indices
+* 'clabels': a cell-array of the strings corresponding to label-indices
 
 These are used for printing out "topics" for visual inspection (e.g. using the "WriteTopicsToCSV" function).
 
