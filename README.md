@@ -147,10 +147,11 @@ ________________________________________________________
 
 # DATASET FORMATTING:
 
-All datasets within the directory "Evaluation_Datasets" should work if the "files.datasetlabel" variable is changed as appropriate. Included in this directory are the following datasets used in our paper:
-	NYT
-	Yahoo_Arts (5 separate train/test splits)
-	Yahoo_Health (5 separate train/test splits)
+All datasets in the directory "/Evaluation_Datasets" are formatted so that they will work with the matlab training and testing scripts for all models. The primary change needed in the scripts is to modify the "files.datasetlabel" variable so that it points to the correct dataset-label (though you will additionally want to modify model hyper-parameters, e.g., per our recommended settings). Included in the "/Evaluation_Datasets" directory are the following datasets which were used in our paper:
+
+- NYT
+- Yahoo_Arts (5 separate train/test splits)
+- Yahoo_Health (5 separate train/test splits)
 
 Please follow the variable-naming conventions used in these datasets if you want to run the code on additional datasets that are not included. Here is a summary of how the datasets are configured:
 
