@@ -32,7 +32,7 @@ If the you are not on a mac or the code doesn't work for you, you should recompi
 
 		compileCode64bit.m
 
-Note that matlab sometimes gives an error (depending on your computer's) when compiling "GibbsSamplerLDA_v2.c". The issue that this causes has been addressed in the script that uses this code ("Train_pCT_New_V01.m"), so this should not cause any problems.
+Note that matlab sometimes gives an error (depending on your computer's settings) when compiling "GibbsSamplerLDA_v2.c". The issue that this causes has been addressed in the script that uses this code ("Train_pCT_New_V01.m"), so this should not cause any problems.
 
 
 
