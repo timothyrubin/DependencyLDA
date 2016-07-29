@@ -82,7 +82,7 @@ The steps required to train the model, and then make predictions using Dependenc
 
 - Run the "PriorLDA_Sample_TestDocuments.m" script in "Test_PriorLDA_TestDocuments".  
  * Since Flat-LDA is a special case of Prior-LDA, we can use the same code to make predictions with Flat-LDA, and only need to modify a couple of parameters.
- * Flat-LDA uses a single training chain of \Phi', in which NTOPICS = 1 and \eta = 0 (the \eta parameter from the paper is named "SUMALPHA_LABELS" in the code, so this parameter should be set to 0)
+ * Flat-LDA uses a single training chain of \Phi', in which NTOPICS = 1 and \eta = 0 (the \eta parameter from the paper corresponds to the variable "SUMALPHA_LABELS" in the code, as documented here and in the comments of the code)
  * For additional details see "Note on Prior-LDA and Flat-LDA" further down in this document
 
 ### Final Predictions, and evaluation of predictions (all models):
