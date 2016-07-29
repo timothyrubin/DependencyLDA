@@ -59,8 +59,7 @@ The steps required to train the model, and then make predictions using Dependenc
 
 1. Train the label->word distributions:
  * Run "ldatagmodel_TrainPWC_V01.m" in the "/Train_pWC_LabelWord_Probs" directory. This samples z for training documents and is used to train \Phi, which gives: p(w|c).
- * Run "Compute_GetAvgPWC_New_V01.m" to infer \Phi for multiple training chains
- * Run "Compute_GetAvgPWC.m" to compute an average \Phi over all training chains
+ * Run "Compute_GetAvgPWC.m" to compute an averaged estimate of \Phi using all training chains
 			
 2. Train the topic->label distributions
  *  Run "Train_pCT_New_V01.m" in the "/Train_pCT_TopicLabel_Probs" directory. This samples z' for training documents and is used to train \Phi', which gives: p(c|t).
