@@ -187,6 +187,6 @@ If you would like to make the code run faster, you can try modifying the samplin
 - 'ITERS_LABELS': Controls how many iterations of the z-sampler before passing the output back to MATLAB
 - 'ITERS_TOPICS': Controls how many iterations of the z'-sampler before passing the output back to MATLAB
 
-You can try experiment with increases these values, which could potentially speed up the model, in terms of time until convergence. But this hsa not been thoroughly tested.
+You can try experimenting with increasing these values, which could potentially speed up the model in terms of time until convergence. But this has not been thoroughly tested.
 
 Alternatively (ideally), all of the code would be compiled so that we wouldn't have to deal with MATLAB's overhead, but we do not currently have an implementation of that.
