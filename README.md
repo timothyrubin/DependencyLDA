@@ -51,7 +51,7 @@ For testing, the code is currently configured to run both:
 Changing a couple of the Prior-LDA parameters will allow testing of the Flat-LDA model.
 
 _________________________________________________
-# Inference for Training and Testing of models
+## Inference for Training and Testing of models
 
 The steps required to train the model, and then make predictions using Dependency-LDA are as follows:
 
@@ -108,7 +108,7 @@ The file containing all computed statistics for both document-pivoted and label-
 
 Document-Pivoted statistics are stored in variable "docstats" and label-pivoted statistics are in variable "labelstats". Note that many more statistics are computed than were actually presented in our paper.
 _________________________________________________
-### Note on Prior-LDA and Flat-LDA
+### Additional Notes on The Relationship of Prior-LDA to Flat-LDA
 
 As noted above, Prior-LDA can be treated a special case of Dependency-LDA in which there is a single Topic / Topic->Label distribution, where the topic's distribution over labels is proportional to the training frequency. Since all documents z/c variables can only be sampled from this one topic, document's \alpha' priors over labels end up being proportional to this one topic's distributions over labels.
 
@@ -129,6 +129,7 @@ The .mat files containing all evaluation statistics for both doc-pivoted and lab
 
 - Flat-LDA:
 	EvaluationDatasets/Yahoo_Health_Split01/TestingOutput/Results_TrainingParams_pWC_A50_B0.010_pCT_01T_0.01A_10.00B/PredictionStats_TOPICS_SumA01_LABELS_SumA00_AddA100_150TotalTestSamples.mat
+
 _________________________________________________
 ### Modifying the code parameters and running on different datasets
 
@@ -142,9 +143,9 @@ All code is currently configured to run the Yahoo_Health_Split1 dataset, using p
 - Change the Testing Parameters as appropriate (in the DependencyLDA_Sample_TestDocuments.m and PriorLDA_Sample_TestDocuments.m scripts). These parameters are in the cell "TEST PARAMETERS" in the matlab script. Note again that the variable names are different from parameter names in the paper, but the relationship is documented in the code.
 
 Please see the paper for our general ecommendations regarding setting parameters for a new dataset.
-________________________________________________________
 
-# DATASET FORMATTING:
+________________________________________________________
+## DATASET FORMATTING:
 
 All datasets in the directory "/Evaluation_Datasets" are formatted so that they will work with the matlab training and testing scripts for all models. The primary change needed in the scripts is to modify the "files.datasetlabel" variable so that it points to the correct dataset-label (though you will additionally want to modify model hyper-parameters, e.g., per our recommended settings). Included in the "/Evaluation_Datasets" directory are the following datasets which were used in our paper:
 
