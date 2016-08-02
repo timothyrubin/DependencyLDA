@@ -181,11 +181,13 @@ If your dataset does not have strings for the "wlabels" or "clabels", you can ju
 ________________________________________________________
 ### ADDITIONAL COMMENTS:
 
-For Dependency-LDA, the code is not fully optimized (and can sometimes be slow for large datasets). Specifically, while the compiled code is fast (for sampling the z and z' variables) it repeatedly passes variables back and forth between matlab and the compiled code. 
+For Dependency-LDA, the code is not fully optimized (and can sometimes be slow for large datasets). Specifically, while the compiled code is fast (for sampling the z and z' variables) it repeatedly passes variables back and forth between matlab and the compiled code, which has a large overhead cost associated with it. 
 
 If you would like to make the code run faster, you can try modifying the sampling parameters that control how often the data is passed between matlab and the compiled code:
-- 'ITERS_LABELS'
-- 'ITERS_TOPICS'
+- 'ITERS_LABELS': Controls how many iterations of the z-sampler before passing the output back to MATLAB
+- 'ITERS_TOPICS': Controls how many iterations of the z'-sampler before passing the output back to MATLAB
 
-which control how many full iterations to run on z and z' before the updated values are passed back to matlab). Alternatively (ideally), all of the code would be compiled, but we do not have an implementation of that.
+You can try setting these values higher, which could speed up the code (although it might possibly worse overall convergence). 
+
+Alternatively (ideally), all of the code would be compiled, but we do not currently have an implementation of that.
 
