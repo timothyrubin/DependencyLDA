@@ -14,7 +14,7 @@ Training of models involves learning:
 
 At test time, we learn the assignments of test documents' word-tokens to labels, and (for Dependency-LDA) the assignments of label-tokens to topics.
 
-#### Note on variable naming
+### Note on variable naming
 
 Note that the variable names in the code are in some cases not equivalent to the parameter names used in the paper. The code is thoroughly commented, and the comments describe the relationships between variable names in the code and model parameters from the paper.
 
