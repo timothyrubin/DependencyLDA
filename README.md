@@ -4,7 +4,7 @@ This is a MATLAB (and C) implementation of the Dependency-LDA, Prior-LDA and Fla
 
 Rubin, T. N., Chambers, A., Smyth, P., & Steyvers, M. (2012). [Statistical topic models for multi-label document classification. ](http://arxiv.org/abs/1107.2462) Machine learning, 88(1-2), 157-208.
 ________________________________________________________
-# Overview
+## Overview
 
 Dependency-LDA, Prior-LDA and Flat-LDA are methods for multi-label document classification, where each document is associated with one or more labels from the set of all labels. 
 
@@ -14,17 +14,17 @@ Training of models involves learning:
 
 At test time, we learn the assignments of test documents' word-tokens to labels, and (for Dependency-LDA) the assignments of label-tokens to topics.
 
-##### Note on variable naming
+#### Note on variable naming
 
-Note that the variable in the code is not equivalent in some cases what is used in the paper. The code is thoroughly commented, and the comments describe the correspondences between variable names and model parameters from the paper.
+Note that the variable names in the code are in some cases not equivalent to the parameter names used in the paper. The code is thoroughly commented, and the comments describe the relationships between variable names in the code and model parameters from the paper.
 
 _________________________________________________
-# Setup
+## Setup
 
 The code should run out-of-the-box if you are on a Macintosh. If you are not on a mac, you will need to re-compile all of the .mex code (from .c source code) and put the samplers in the corresponding directories.
 
 
-##### Compiling the Mex files from C
+#### Compiling the Mex files from C
 
 All matlab scripts call compiled c code (which matlab compiles into .mex files) when sampling the z/z' indicators ). I have included code that was compiled on a Mac in the appropriate directories. If you are on a mac, the .mex files should work as is. 
 
@@ -36,7 +36,7 @@ Note that matlab sometimes gives an error (depending on your computer's settings
 
 
 
-##### Current code configurations
+#### Current code configurations
 
 All code is currently configured to run on the 'Yahoo_Health_Split01' evaluation dataset included in the package. 
 
